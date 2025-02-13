@@ -1,0 +1,7 @@
+.vscode-body {
+    color: rgb(143, 118, 109); 
+    background: linear-gradient(180deg, rgba(71,140,191,1) 0%, rgba(9,9,121,1) 51%, rgba(255,0,247,1) 100%); 
+}
+.markdown-body {
+    background: rgba(201, 11, 11, 0);
+}
