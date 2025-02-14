@@ -22,18 +22,18 @@ th {
 	 padding: 5px 10px;	
 }
 a {
-   color: #59acf3;
+   color: rgb(109,53,139);
 }
 
 a:link {
    font-family: "Tahoma";
    font-weight: bold;
    
-   color: rgb(109,53,139);
+   color: #59acf3;
 }
 
 a:hover {
-   color: #59acf3;
+   color: rgb(110,53,139);
    text-decoration: none;
 }
 
@@ -74,13 +74,13 @@ h3 {
    font-size: 18px;
 }
 h4 {
-   font-size: 16px;
+   font-size: 18px;
 }
 h5 {
-   font-size: 14px;
+   font-size: 18px;
 }
 h6 {
-   font-size: 13px;
+   font-size: 18px;
 }
 hr {
    margin: 0 0 19px;
@@ -90,8 +90,7 @@ hr {
 blockquote {
    padding: 13px 13px 21px 15px;
    margin-bottom: 18px;
-   font-family:georgia,serif;
-   font-style: italic;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 blockquote:before {
    content:"\201C";
@@ -105,7 +104,6 @@ blockquote p {
    font-weight: 300;
    line-height: 18px;
    margin-bottom: 0;
-   font-style: italic;
 }
 
 code, pre {
