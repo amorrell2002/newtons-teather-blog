@@ -12,6 +12,7 @@ The making of the VR Demo for the game "Newtons Tether" which is still in develo
 
 
 **TODO**:
+- Mention the [setting up xr documentation](https://docs.godotengine.org/en/stable/tutorials/xr/setting_up_xr.html)
 - ALSO NEED TO ENABLE XR TOOLS PLUGIN
 - Talk about XR server set up script on RootNode
 - Implement teleport using appropriate player body functions
