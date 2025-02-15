@@ -10,7 +10,7 @@ The making of the VR Demo for the game "Newtons Tether" which is still in develo
 
 *Author: Alex Morrell*
 
-<br>
+---
 
 ### Key Technologies
 - [Godot XR Tools](https://docs.godotengine.org/en/stable/tutorials/xr/introducing_xr_tools.html)
@@ -24,13 +24,14 @@ I have always been facinated by the amazingly intricate complexity of Solar Syst
 
 *[Photo](https://www.flickr.com/photos/kaptainkobold/127601212/sizes/m) by Kaptain Kobold*
 
-<br>
-<br>
+---
+
 The movement of the celestial bodies in and of itself is mesmerizing.
 However there are some clear limitations as a result of being a clockwork construction, the main being it is not dynamic.
 The planets are just there, always orbiting on the same plane, with the same period. 
 
 <br>
+
 We have computers, why settle for gears?
 
 Lets play god.
@@ -76,7 +77,7 @@ My node tree is pictured below:
 This node allows me to have a starfield image as our sky box.
 Create a new Environment, and within it a new Sky with a Panoramic Sky Material.
 I used [this](https://svs.gsfc.nasa.gov/4851) panorama from NASA.
-Also disable Ambient lighting, as we are literally making our own sun.
+Also disabled Ambient lighting, as we are literally making our own sun.
 
 ##### Sun
 This node contains the light source for the sun as well as its 3D mesh. For our light source we are using a Omni light so the planet is lit correctly as it orbits around the sun. The sun mesh material is an emission material with a texture from solar system scope.
@@ -88,7 +89,7 @@ This also fits the orrery theme :)
 ##### EarthRigidBody
 This object will be interacted with through the physics system, so we are using a rigid body node. 
 
-The material for the mesh isn't very complex, albedo is from the Earth Day Map, a specular map and normal map all from solar system scope.
+The material for the mesh isn't very complex, albedo is from the Earth Day Map, with a specular map and normal map all from solar system scope.
 
 However, Godot's renderer seems to see white as diffuse (the inverse of the map provided)
 Another issue is that pure black in the map would create hot spot reflections that were grating. So I inverted the colors and blended the map with a white layer in [Krita](https://krita.org/en/) to address both issues.
@@ -104,7 +105,7 @@ After:
 ![SpecAfter](/images/8k_earth_specular_mapWHiteLandGreyocean.png)
 
 Last Node needed for Earth is a CollisionShape so the physics engine knows when the rigid body touches something. So a spherical collision shape with the same size as the mesh is added.
-[In this section](#physics) we will add a script to the rigid body node to calculate gravitational forces to be applied to the rigid body
+[In this section](#physics) we will add a script to the rigid body node to calculate gravitational forces to be applied to the rigid body.
 #### XR Tools
 XR Tools handles a lot of tedious parts of VR development, it comes with pre-rigged hands that respond to controller grip positions, hand textures, movement functions, etc.
 
