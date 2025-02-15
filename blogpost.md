@@ -10,6 +10,12 @@ The making of the VR Demo for the game "Newtons Tether" which is still in develo
 
 *Author: Alex Morrell*
 
+
+**TODO**:
+- ALSO NEED TO ENABLE XR TOOLS PLUGIN
+- Talk about XR server set up script on RootNode
+- Implement teleport using appropriate player body functions
+
 ---
 
 ### Key Technologies
@@ -61,6 +67,7 @@ So when setting up my project, I made sure to select "Mobile"
 Once the project is open, we need to enable Open XR under project settings.
 
 ![SetupImg2](/images/Setup2.png)
+
 
 > While I was here, I also changed the 3D physics linear damping to 0. 
 > That could be a real ***drag*** on our orbital mechanics!
