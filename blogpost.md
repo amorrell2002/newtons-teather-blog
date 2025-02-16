@@ -12,9 +12,6 @@ The making of the VR Demo for the game "Newtons Tether" which is still in develo
 
 
 **TODO**:
-- Mention the [setting up xr documentation](https://docs.godotengine.org/en/stable/tutorials/xr/setting_up_xr.html)
-- ALSO NEED TO ENABLE XR TOOLS PLUGIN
-- Talk about XR server set up script on RootNode
 - Implement teleport using appropriate player body functions
 
 ---
@@ -119,6 +116,15 @@ XR Tools handles a lot of tedious parts of VR development, it comes with pre-rig
 
 To start you need to download [XR Tools](https://github.com/GodotVR/godot-xr-tools/releases) and extract the archive to an "addons" directory in your godot project.
 
+Once it has been extracted to the addons folder, enable the plugin in Godot's project settings.
+
+
+In order for Godot to render VR images, we need a startup script on the root node to configure the viewport.
+The Godot engine [docs](https://docs.godotengine.org/en/stable/tutorials/xr/setting_up_xr.html) have a great startup script for this, as well as an overview of XR Tool functions.
+Anything not covered here should be answered in those docs.
+
+---
+
 XR Nodes:
 
 ![XRNodeImg](/images/XRNodes.png)
@@ -127,19 +133,21 @@ Once that is done, a XROrigin node contains all of the XR related nodes used to 
 
 The XR camera is the headset of the player, left and right controllers are also represent their namesake.
 
-The cool part is that those nodes automatically are tracked through 3D space, so you can put whatever mesh/collider/whatever node tracked onto the player's hands or head just by making them children of the controller nodes. For this project I am using the rigged physics hands from XR Tools so I don't have to make my own collider.
+The XR Server updates all the tracker position information on the controller nodes, so child nodes of the controllers or headset will automatically follow the players movements!
 
+For this project I am using the rigged physics hands from XR Tools so I don't have to make my own collider.
 The hand nodes are actually sub-scenes that can be edited by double clicking them.
-I added a skin material also provided with XR Tools so they were not mannequin hands.
+I added a skin material also provided with XR Tools to make the hands less glove-like.
 
 ##### MovementFlight
-A function that allows for free flight provided by XR Tools. Come with a number of cool settings:
+A function that allows for free flight provided by XR Tools. Come with a number of useful settings:
 
 ![MovementFlightSettings](/images/MovementFlightSettings.png)
 
-For now I am using the headset tilt to control the pitch of flight. This makes it easy to look where you want to go and press forward to go there. The other joystick can be used to turn in place by using a movement_turn function on the other controller.
+For now I am using the headset to control the pitch and bearing of flight. This makes it easy to look where you want to go and press forward to go there. The other joystick can be used to turn in place by using a movement_turn function on the other controller.
 
 These movement functions from XR Tools require a PlayerBody node to be a child of the XR Origin. This node has helper functions to determine the direction the player is facing as well as other functions.
+Should be automatically added, but can be instantiated just like the other functions.
 
-I ended up modifying the flight movement script to remove the toggle flight on/off behavior, and added a reset button function that will move the player and planets back to their starting position.
+I ended up modifying the flight movement script to remove the toggle flight on/off behavior, and added a reset button function that will move the player and planets back to their starting position and reset their velocities to zero.
 #### Physics
